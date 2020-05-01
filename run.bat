@@ -1,0 +1,2 @@
+python joker.py
+PAUSE

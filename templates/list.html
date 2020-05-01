@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% for line in l %}
+    {% set line = line.lower() %}
+        {% if line in legs %}
+            {% set line_name = line + " - LEGENDARY" %}
+        {% else %}
+            {% set line_name = line %}
+        {% endif %}
+    <div class="media">
+        <img src="https://img.pokemondb.net/artwork/{{line}}.jpg" width="25" height="25" class="mr-3" alt="...">
+        <div class="media-body">
+          <h5 class="mt-0">{{line_name}}</h5>
+        </div>
+    </div>
+      
+    {% endfor %}
+<form action="/list" method="POST">
+    <button type="submit" class="btn btn-danger">Clear list</button>
+</form>
+</div>
+<a href="list"><button type="button" id ="refresh" class="btn btn-success">Refresh</button></a>
+</div>
+{% endblock %}

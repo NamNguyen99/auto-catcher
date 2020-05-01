@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+{% if error %}
+<div id="empty_alert" class="alert alert-danger" role="alert">
+        {{error}}
+</div>
+{% endif %}
+<div id="prefix_form" class="container">
+<form action="/prefix_finished" method="POST">
+    <div id="prefix_form" class="form-group">
+            <label for="custom_prefix">Input your prefix</label>
+            <input type="text" class="form-control" name="custom_prefix" id="custom_prefix" value={{custom_prefix}}>
+    
+    <div class="alert alert-warning" role="alert">
+        Make sure to reboot the bot for this changes to apply.
+      </div>
+    <button type="submit" class="btn btn-primary">
+        Save
+    </button>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="alert alert-warning" role="alert">
+    Alert: Reboot the bot after changing this
+  </div>
+<div class="alert alert-primary" role="alert">
+	Please click on the channels on which you want to spam. Channels selected in blue are already ACTIVATED.
+</div>
+  	      <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Spam channels:
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+
+  	<div class="dropdown-menu" aria-labelledby="dropdownMenu">
+			{% for channel in channels %}
+			{% if channels[channel][1] == "True" %}
+			<a class="dropdown-item active" href="/change_channel/{{channel}}/False">{{channels[channel][ 0]}}</a>
+			{% else %}
+
+			<a class="dropdown-item" href="/change_channel/{{channel}}/True">{{channels[channel][0]}}</a>
+			{% endif %}
+			{% endfor %}
+	</div>
+	<br></br>
+	<p>Now please enter the delay for the channels, the default is 5</p>
+	<div>
+	{% for channel in channels %}
+	<form action="/spam_delay/{{channel}}" method="POST">
+		<p id="spam_channel_text">{{channels[channel][0]}}</p>
+		<div class="input-group mb-3">
+  		<div class="input-group-prepend">
+			<button type="submit" class="btn btn-success">Save (Reboot after)</button>
+ 		</div>
+		<input type="text" value="{{channels[channel][2]}}"class="form-control" name="{{channel}}"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+		</div>
+	</form>
+	{% endfor %}
+	</div>
+{% endblock %}

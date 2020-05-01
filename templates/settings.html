@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div id="ud">
+	<button type="submit" class="btn btn-danger">Check for list update (SOON)</button>
+</div>
+<div id="customize_options">
+	<a href="custom_list"><button type="submit" class="btn btn-primary">Customize Lists</button></a>
+	<a href="custom_prefix"><button type="submit" class="btn btn-primary">Customize Prefix</button></a>
+	<a href="custom_guilds"><button type="submit" class="btn btn-primary">Customize Guilds</button></a>
+</div>
+<div id="refreshChannels">
+	<p>Warning! This may take a long time. Do this if this is your first time using the bot.</p>
+	<a href="refresh_channels"><button type="submit" class="btn btn-warning">Refresh channels</button></a>
+</div>
+<div id="spam">
+	<a href="spam"><button type="submit" class="btn btn-primary">Change Spam Options</button></a>
+	<a href="start_spamming"><button type="submit" class="btn btn-success">Start spamming</button></a>
+	<a href="stop_spamming"><button type="submit" class="btn btn-success">Stop spamming</button></a>
+</div>
+
+{% endblock %}

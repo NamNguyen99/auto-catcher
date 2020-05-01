@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% if err != False %}
+        <div class="alert alert-danger" role="alert">
+        The term you typed: {{err}} wasn't found. Please type the Pokemon with first uppercase letter.
+      </div>
+    {% endif %}
+<div>
+    <ul class="list-group" id="custom_pokemons">
+            <li class="list-group-item active">List of your custom pokemons</li>
+            {% for i in cl %}
+            <li class="list-group-item">{{i}}   <a href="del_custom/{{i}}" class="btn btn-danger">X</a></li>
+            
+            {% set row_id = i %}
+            {% endfor %}
+          </ul>
+</div>
+<div>
+    <form action="custom_list" method="POST">
+        <div id="pokemon_form" class="form-group">
+            <input type="text" class="form-control" name="new_pokemon" id="new_pokemon" aria-describedby="pokehelp" placeholder="Enter new pokemon (Ex.: Bulbasaur)">
+    <button type="submit" class="btn btn-success">
+        Add
+    </button>      
+    </form>
+
+</div>
+
+<div>
+<div class="alert alert-primary" role="alert">
+        Enable/Disable Custom List (Note: Reboot the bot after changing this):
+      </div>
+      <form action="/custom_list" method="POST">
+      <div class="form-check">
+            <input class="form-check-input" type="radio" name="custom_list_state" id="custom_list_state" value="custom_list_true" checked>
+            <label class="form-check-label" for="custom_list_state">
+                Enabled
+            </label>
+            <p></p>
+            <input class="form-check-input" type="radio" name="custom_list_state" id="custom_list_state" value="custom_list_false">
+            <label class="form-check-label" for="custom_list_state">
+                Disabled
+            </label> 
+    <button type="submit" class="btn btn-success">
+           Change
+        </button>  
+    </form>  
+    </div>
+{% endblock %}

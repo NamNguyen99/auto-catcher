@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="alert alert-warning" role="alert">
+    Alert: Reboot the bot after changing this
+  </div>
+    <ul class="list-group" id="custom_guilds"></ul>
+        <li class="list-group-item active">Servers you are in:</li>
+        {% for guild in guilds %}
+        {% if guilds[guild][0] == "True" %}
+            {% set state = "Enabled" %}
+        {% elif guilds[guild][0] == "False" %}
+            {% set state = "Disabled" %}
+        {% endif %}
+        {% if state == "Enabled" %}
+        <span class="badge badge-success">{{state}} <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Catch delay: {{guilds[guild][3]}} s
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/delay/{{guild}}/1">1 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/2">2 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/3">3 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/4">4 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/5">5 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/6">6 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/7">7 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/8">8 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/9">9 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/10">10 seconds</a>
+              </div> </div><li class="list-group-item">{{guilds[guild][1]}}  <img src= "https://cdn.discordapp.com/icons/{{guild}}/{{guilds[guild][2]}}.png" width="48" height="48"> <a href="disable_guild/{{guild}}" class="btn btn-danger">Disable</a><a href="enable_guild/{{guild}}" class="btn btn-success">Enable</a></li></span>
+        
+        
+        {% elif state == "Disabled" %}
+        <span class="badge badge-danger">{{state}} <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Catch delay: {{guilds[guild][3]}} s
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/delay/{{guild}}/1">1 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/2">2 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/3">3 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/4">4 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/5">5 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/6">6 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/7">7 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/8">8 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/9">9 seconds</a>
+                  <a class="dropdown-item" href="/delay/{{guild}}/10">10 seconds</a>
+              </div></div> <li class="list-group-item">{{guilds[guild][1]}}  <img src= "https://cdn.discordapp.com/icons/{{guild}}/{{guilds[guild][2]}}.png" width="48" height="48"> <a href="disable_guild/{{guild}}" class="btn btn-danger">Disable</a><a href="enable_guild/{{guild}}" class="btn btn-success">Enable</a></li></span>
+        {% endif %}
+        {% endfor %} 
+</div>
+{% endblock %}

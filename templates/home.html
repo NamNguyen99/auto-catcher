@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+        <div class="container">
+                <h1>Welcome to JokerCord admin page</h1>
+                <div class="alert alert-warning" role="alert">
+                  Attention: All servers come disabled by default. To enable them, go here:
+                </div>
+                <a href="custom_guilds" class="btn btn-primary">Click here!</a>
+      </div>
+      
+    
+    <div id= "restart" class="card" style="width: 16rem;">
+     
+            <img src="https://iconsplace.com/wp-content/uploads/_icons/40e0d0/256/png/restart-icon-17-256.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Restart the bot</h5>
+              <p class="card-text">Restart the bot and the webpage</p>
+              <form action="/home" method="POST">
+                <button type="submit" formmethod="POST" class="btn btn-warning">Reboot!</button>
+            </form>
+            </div>
+    </div>
+  
+    <div id= "caught" class="card" style="width: 16rem;">
+            <img src="https://purepng.com/public/uploads/large/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-1701527825800omhst.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Caught List</h5>
+              <p class="card-text">Go to the caught pokemons list</p>
+              <a href="list" class="btn btn-primary">List</a>
+            </div>
+          </div>
+    <div id = "prefs" class="card" style="width: 16rem;">
+          <img src="https://static.thenounproject.com/png/213427-200.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Edit preferences</h5>
+            <p class="card-text">Edit your account preferences</p>
+            <a href="setup" class="btn btn-primary">Edit</a>
+          </div>
+        </div>
+    <div id = "settings" class="card" style="width: 16rem;">
+            <img src="https://images.vexels.com/media/users/3/157675/isolated/preview/4e60fa416a33f12786f83f4a29c095e5-wrench-and-gear-icon-by-vexels.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Settings</h5>
+              <p class="card-text">Customize the bot!</p>
+              <a href="settings" class="btn btn-primary">Settings</a>
+            </div>
+          </div>
+    
+<div>
+    <ul class="list-group" id="stats">
+            <li class="list-group-item active">Bot statistics</li>
+            <li class="list-group-item">Caught pokemons: {{pokemons}}</li>
+          </ul>
+</div>
+<div id="ver">
+<p>Version Multi-1.1.0</p>
+</div>
+{% endblock %}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JokerCord Admin Page</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">
+    <style>
+            #setup_form {
+            text-align: center;
+            margin: 0 auto;
+            }
+			.container{
+			padding: unset;
+			
+			}
+            #config{
+                text-align: center;
+                margin: 0 auto;
+
+            }
+            #customize_options{
+
+              text-align: center;
+                margin: 0 auto;
+                margin-top: 40px;
+            }
+            #ud{
+              text-align: center;
+                margin: 0 auto;
+                margin-top: 25px;
+            }
+            #sd{
+                text-align: center;
+                margin: 0 auto;
+                margin-top: 250px;
+            }
+            #ver{
+              margin-top: 80px;
+
+            }
+            #stats{
+                margin-top: 100px;
+
+            }
+            #caught{
+            display: inline-block;
+            
+            }
+            #prefs{
+                display: inline-block;
+            
+            }
+            #settings{
+            display: inline-block;
+            
+            }
+            #refresh{
+              display: inline-block;
+
+            }
+            #restart{
+            display: inline-block;
+            
+            }
+	    #refreshChannels{
+		text-align: center;
+		margin: 0 auto;
+		margin-top: 60px;
+	    }
+	    #spam{
+		text-align: center;
+		margin: 0 auto;
+		margin-top: 40px;
+	    }
+		p#spam_channel_text{
+		font-size: medium;
+		font-weight: 700;
+		margin-bottom: 1px;
+		
+		}
+            </style>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <img src="https://avatars3.githubusercontent.com/u/26441684?s=460&v=4" width="25" height="25" alt="">
+
+                <a class="navbar-brand" href="home">JokerCord</a>
+                    
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://github.com/joker-ware/JokerCord">GitHub</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://github.com/joker-ware/JokerCord/issues">Report issue</a>
+                    </li>
+                </div>
+              </nav>
+              
+    <div class="container">
+        <div class="col-xs-1 center-block" >
+        {% block body %}
+        {% endblock %}
+        </div>
+    </div>
+    
+
+</body>
+
+</html>
