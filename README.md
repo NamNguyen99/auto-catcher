@@ -1,34 +1,3 @@
-If you like my work and want to support it, you can donate here :)
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/jokerware)
-
-# DISCLAIMER
-The bot has been broken as of the recent update of pokecord. New bot (a.k.a Nearix) is working 100%, but it is still not finished.
-You can check out latest updates and info at the discord server. Thanks for your patience.
-
-# Discontinued version (As of 18/02/2020)
-(Keep track of the new bot at https://github.com/joker-ware/nearix-beta
-This version will soon be discontinued. I will rewrite the bot 100% from scratch in another language (Go) with improved stability,
-usability, reduced bugs , cleaner and with a massively easier setup process. Please be patient until I release it. For any updates
-you can join the discord server. https://discord.gg/UHVY23g
-
-# NEW UPDATE FOR WINDOWS USERS
-This version fixes the known error of no servers or channels showing on the webpage and KeyErrors on the console. Please let me know if any other error happens.
-# NEW UPDATE MULTI-1.0.0 3/2/2020
-This update brings a1new awesome feature: Multi spam!
-Enable and disable spam in specific channels and set a delay for each of them! 
--The setup of the bot has been simplified
-
-The bot is being updated and rewritten. Please add any suggestions in issues. Old suggestions will be considered too.
-Current objectives:
-Items marked with ~~this line~~ have already been completed.
-Items marked with *italic* are being discussed.
-1. Add custom prefix support.
-2. ~~Simplify setup of the bot~~
-3. ~~Add the option to spam on multiple channels~~
-4. *Discard pokemons by IV*
-5. Make a video tutorial for Windows and ~~Linux~~
-
 # NEW: Video tutorials
 
 This video covers the bot setup, not the Python installation.
